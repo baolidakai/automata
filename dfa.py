@@ -15,7 +15,7 @@ class DFA(object):
     assert len(Q) > 0 and len(Sigma) > 0 and q0 in Q
     self.Q = Q
     self.Sigma = Sigma
-    self.delta = delta if type(delta) not in [dict, defaultdict] else lambda x: delta[x]
+    self.delta = delta if type(delta) not in [dict, defaultdict] else lambda x: delta.get(x, None)
     self.q0 = q0
     self.F = F
 
