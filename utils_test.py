@@ -43,3 +43,20 @@ assert nfa_1_22.accept('00100')
 assert not nfa_1_22.accept('')
 assert not nfa_1_22.accept('000')
 assert not nfa_1_22.accept('01010')
+
+# NFA in Figure 1.42
+nfa_1_42 = NFA(
+    {'1', '2', '3'},
+    {'a', 'b'},
+    {
+      ('1', 'b'): {'2'},
+      ('1', ''): {'3'},
+      ('2', 'a'): {'2', '3'},
+      ('2', 'b'): {'3'},
+      ('3', 'a'): {'1'}
+    },
+    '1',
+    {'1'}
+    )
+
+dfa_1_42 = NFA2DFA(nfa_1_42)

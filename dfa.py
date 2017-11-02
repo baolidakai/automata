@@ -19,6 +19,14 @@ class DFA(object):
     self.q0 = q0
     self.F = F
 
+  @property
+  def transition_func(self):
+    rtn = dict()
+    for state in self.Q:
+      for symbol in self.Sigma:
+        rtn[(state, symbol)] = self.delta((state, symbol))
+    return rtn
+
   def accept(self, w):
     '''Returns true if w is accepted by the DFA, and false otherwise.
     '''
