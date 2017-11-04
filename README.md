@@ -6,8 +6,10 @@ This tool is capable of the following functionalities:
 * Given a DFA/NFA and a string w, outputs whether w is accepted
 * Convert a DFA to NFA
 * Convert a NFA to an equivalent DFA
+* Minimize a DFA (not tested)
 
 TODOs:
-* Construct a minimal DFA given a DFA, using table filling algorithm
+* Add a isomorphism checker, can use the algorithm in-class
+* Test the DFA-minimizer
 * PAC learning from data
 * Visualize DFA or NFA
